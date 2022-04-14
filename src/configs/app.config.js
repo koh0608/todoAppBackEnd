@@ -1,0 +1,11 @@
+"use strict";
+exports.__esModule = true;
+exports.origins = exports.isDev = exports.isProduction = exports.appName = exports.port = void 0;
+var dotenv_1 = require("dotenv");
+dotenv_1["default"].config();
+var _utils_1 = require("@utils");
+exports.port = process.env.PORT;
+exports.appName = process.env.APP_NAME;
+exports.isProduction = process.env.NODE_ENV === 'production';
+exports.isDev = process.env.NODE_ENV === 'development';
+exports.origins = (0, _utils_1.splitStringToArray)(process.env.ORIGINS, ',') || [];
